@@ -24,6 +24,7 @@ public class UserController {
         User user = service.fineOne(id);
         if(user == null){
             throw new UserNotFoundException("id -" + id);
+            //throw new Exception();
         }
         return user;
     }
