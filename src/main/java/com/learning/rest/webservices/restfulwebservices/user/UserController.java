@@ -20,10 +20,10 @@ public class UserController {
     }
 
     @GetMapping(path = "/users/{id}")
-    public User retrieveOneUser(@PathVariable Integer id) throws Exception {
+    public User retrieveOneUser(@PathVariable Integer id) {
         User user = service.fineOne(id);
         if(user == null){
-            throw new Exception();
+            throw new UserNotFoundException("id -" + id);
         }
         return user;
     }
